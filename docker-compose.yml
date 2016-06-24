@@ -1,0 +1,14 @@
+version: '2'
+services:
+  chrome:
+    build: ./chrome
+    hostname: localhost
+    links:
+      - api
+    ports:
+      - "9222:9222"
+  api:
+    build: ./api
+    hostname: localhost
+    ports:
+      - "3000:3000"
